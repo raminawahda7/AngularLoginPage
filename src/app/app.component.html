@@ -1,0 +1,55 @@
+<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+  <div class="container-xxl">
+    <div class="row">
+      <div class="col-md">
+        <div class="mb-4">
+          <img src="https://ai-law.co.uk/wp-content/uploads/2018/08/logo-ai.png" alt="Logo" class="img-fluid"
+            style="max-height: 60px;">
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <label mdbLabel class="form-label" for="email">Email</label>
+          <mdb-form-control class="mb-4">
+            <input mdbInput type="email" id="email" formControlName="email" class="form-control"
+              placeholder="johndoe@gmail.com" />
+          </mdb-form-control>
+          <label mdbLabel class="form-label" for="password">Password</label>
+          <mdb-form-control class="mb-4">
+            <input mdbInput type="password" id="password" formControlName="password" class="form-control"
+              placeholder="*********" />
+          </mdb-form-control>
+          <div class="row mb-4">
+            <div class="col">
+              <a href="#!">Forgot password?</a>
+            </div>
+          </div>
+
+          <button mdbRipple type="submit" class="btn btn-primary btn-block mb-4">Log in</button>
+          <div *ngIf="isLoggedIn">
+            <button mdbRipple type="button" class="btn btn-danger btn-block mb-4" (click)="logout()">Logout</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md">
+        <div class="carousel-inner rounded-5 shadow-4-strong">
+          <mdb-carousel [controls]="false" [indicators]="true" [animation]="'fade'">
+            <mdb-carousel-item>
+              <img src="https://i.imgur.com/BRYMsKm.jpeg" class="d-block w-100" alt="..." />
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+              <img src="https://i.imgur.com/BRYMsKm.jpeg" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-lg-block text-dark">
+                <h5>Your Personal Task Manager Has Arrived!</h5>
+                <h6>Create You Login Password To Access You Account</h6>
+              </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+              <img src="https://i.imgur.com/5yNzmkS.jpeg" class="d-block w-100" alt="..." />
+            </mdb-carousel-item>
+          </mdb-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
